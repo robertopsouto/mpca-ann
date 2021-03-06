@@ -238,7 +238,7 @@ PROGRAM MPCA
     allocate(op % x(op % nInputs, op % nClasses))
     allocate(op % y(op % nOutputs, op % nClasses))
 
-    fString = '(      F8.5)'
+    fString = '(      F9.5)'
     write(fString(2:7), '(I6)') op % nClasses
 
     OPEN (2, file = './data/x.txt')

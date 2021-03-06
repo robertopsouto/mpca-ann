@@ -72,13 +72,13 @@ CONTAINS
         !----------------------------------------------------------------------!        
         allocate(y(op % nOutputs, op % nClasses))
         
-        fString = '(      F8.5)'
+        fString = '(      F9.5)'
         write(fString(2:7), '(I6)') op % nClasses
 
         do i = 1, op % nClasses
             ! ACTIVATING HIDDEN LAYER 1
             vh1 = matmul(op % x(:, i), config % wh1) - config % bh1
-            fString = '(      F8.5)'
+            fString = '(      F9.5)'
             write(fString(2:7), '(I6)') config % neuronsLayer(1)            
             
             yh1 = activation(vh1, config % activationFunction)
@@ -101,7 +101,7 @@ CONTAINS
         
         neuralNetworkActivation = sum(error) / dfloat(op % nClasses)
     
-        fString = '(      F8.5)'
+        fString = '(      F9.5)'
         OPEN (2, file = './output/y_activation.txt')
         DO i = 1, op % nOutputs
             write(2, fString) (y(i, j) , j = 1, op % nClasses)

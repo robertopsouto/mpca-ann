@@ -12,14 +12,14 @@ PROGRAM MAIN_ACTIVATION
     integer :: j
     integer :: k
 
-    op % nClasses = 96000
+    op % nClasses = 6000
     op % nInputs = 2
     op % nOutputs = 1
 
     allocate(op % x(op % nInputs, op % nClasses))
     allocate(op % y(op % nOutputs, op % nClasses))
 
-    fString = '(      F8.5)'
+    fString = '(      F9.5)'
     write(fString(2:7), '(I6)') op % nClasses
 
     OPEN (2, file = './data/x_activation.txt')
